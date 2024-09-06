@@ -39,14 +39,6 @@ module "eks_blueprints_kubernetes_addons" {
   #region K8s ADDONS
   enable_argocd = false
    
-  argocd_helm_config = {
-    set_sensitive = [
-      {
-        name  = "configs.secret.argocdServerAdminPassword"
-        value = bcrypt(data.aws_secretsmanager_secret_version.admin_password_version.secret_string)
-      }
-    ]
-  }
 
   argocd_manage_add_ons = true # Indicates that ArgoCD is responsible for managing/deploying add-ons
   argocd_applications = {
