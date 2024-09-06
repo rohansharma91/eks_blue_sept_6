@@ -63,5 +63,5 @@ module "eks_blueprints_kubernetes_addons" {
       repo_url           = "https://github.com/lkravi/eks_blueprints_workloads"
       add_on_application = false
     }
-  }
+  
 
