@@ -50,10 +50,10 @@ module "eks_blueprints_dev_teams" {
 
       resource_quota = {
         hard = {
-          "requests.cpu"    = "100",
-          "requests.memory" = "20Gi",
-          "limits.cpu"      = "200",
-          "limits.memory"   = "50Gi",
+          "requests.cpu"    = "500m",
+          "requests.memory" = "1Gi",
+          "limits.cpu"      = "1000m",
+          "limits.memory"   = "2Gi",
           "pods"            = "15",
           "secrets"         = "10",
           "services"        = "20"
@@ -76,7 +76,7 @@ module "eks_blueprints_dev_teams" {
           {
             type = "PersistentVolumeClaim"
             min = {
-              storage = "24M"
+              storage = "10M"
             }
           },
           {
