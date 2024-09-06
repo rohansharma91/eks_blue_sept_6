@@ -24,6 +24,18 @@ module "eks_blueprints_addons" {
 
   enable_aws_load_balancer_controller = true
   enable_metrics_server               = true
+
+  enable_argocd         = true
+  argocd_manage_add_ons = true # Indicates that Argo CD is responsible for managing/deploying Add-ons.
+  addons = {
+    path               = "chart"
+    repo_url           = "https://github.com/aws-samples/eks-blueprints-add-ons.git"
+    add_on_application = true
+  }
+  workloads = {
+    path               = "envs/dev"
+    repo_url           = "https://github.com/aws-samples/eks-blueprints-workloads.git"
+    add_on_application = false
   
 
   tags = local.tags
