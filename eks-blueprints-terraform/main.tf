@@ -151,5 +151,5 @@ module "ebs_csi_driver_irsa" {
   tags = local.tags
 }
 resource "time_sleep" "wait_for_cluster" {
-  depends_on = [module.eks_blueprints]
+  depends_on = [module.eks]
 }
