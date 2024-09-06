@@ -88,12 +88,8 @@ module "eks" {
 
   # EKS Addons
   cluster_addons = {
-    coredns    = {
-    most_recent = true
-    }
-    kube-proxy = {
-    most_recent = true
-    }
+    coredns    = {}
+    kube-proxy = {}
     vpc-cni    = {}
     aws-ebs-csi-driver   = {
       service_account_role_arn = module.ebs_csi_driver_irsa.iam_role_arn
