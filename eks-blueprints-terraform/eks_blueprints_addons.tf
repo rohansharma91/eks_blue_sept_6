@@ -26,17 +26,6 @@ module "eks_blueprints_addons" {
   enable_metrics_server               = true
   enable_cluster_autoscaler           = true
 
-
-
-  tags = local.tags
- }
-
-module "eks_blueprints_kubernetes_addons" {
-  source = "github.com/aws-ia/terraform-aws-eks-blueprints//modules/kubernetes-addons?ref=v4.8.0"
-
-cluster_name      = module.eks.cluster_name
-   
-  #region K8s ADDONS
   enable_argocd = false
    
 
@@ -53,5 +42,7 @@ cluster_name      = module.eks.cluster_name
       add_on_application = false
     }
   }
-}
 
+
+  tags = local.tags
+ }
