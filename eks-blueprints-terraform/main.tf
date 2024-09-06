@@ -121,14 +121,7 @@ module "eks" {
     },
     module.eks_blueprints_platform_team.aws_auth_configmap_role,
     [for team in module.eks_blueprints_dev_teams : team.aws_auth_configmap_role],
-    {
-      rolearn  = module.eks_blueprints_addons.karpenter.node_iam_role_arn
-      username = "system:node:{{EC2PrivateDNSName}}"
-      groups = [
-        "system:bootstrappers",
-        "system:nodes",
-      ]
-    }
+  
   ])
 
   tags = merge(local.tags, {
