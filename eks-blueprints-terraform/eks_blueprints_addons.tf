@@ -63,3 +63,7 @@ module "eks_blueprints_kubernetes_addons" {
     }
   }
 }
+depends_on = [
+    time_sleep.wait_for_cluster
+  ]
+}
