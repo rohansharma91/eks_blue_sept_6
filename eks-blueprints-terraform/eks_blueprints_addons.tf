@@ -29,6 +29,7 @@ module "eks_blueprints_addons" {
 
 
   tags = local.tags
+ }
 }
 
 module "eks_blueprints_kubernetes_addons" {
