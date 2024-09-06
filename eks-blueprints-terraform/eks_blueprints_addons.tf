@@ -24,6 +24,7 @@ module "eks_blueprints_addons" {
 
   enable_aws_load_balancer_controller = true
   enable_metrics_server               = true
+}
 
   enable_argocd         = true
   argocd_manage_add_ons = true # Indicates that Argo CD is responsible for managing/deploying Add-ons.
@@ -39,5 +40,6 @@ module "eks_blueprints_addons" {
   
 
   tags = local.tags
-  }
+   }
+ }
 }
