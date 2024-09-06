@@ -67,4 +67,3 @@ depends_on = [
     time_sleep.wait_for_cluster
   ]
  }
-}
