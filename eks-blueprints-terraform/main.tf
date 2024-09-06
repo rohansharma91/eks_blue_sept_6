@@ -88,7 +88,11 @@ module "eks" {
 
   # EKS Addons
   cluster_addons = {
-    coredns    = {}
+    coredns    = {
+    most_recent        = true
+    kubernetes_version = "1.30"
+    resolve_conflicts  = "OVERWRITE
+    }
     kube-proxy = {}
     vpc-cni    = {}
     aws-ebs-csi-driver   = {
