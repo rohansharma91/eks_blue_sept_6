@@ -34,7 +34,7 @@ module "eks_blueprints_addons" {
 module "eks_blueprints_kubernetes_addons" {
   source = "github.com/aws-ia/terraform-aws-eks-blueprints//modules/kubernetes-addons?ref=v4.8.0"
 
-eks_cluster_id = module.eks.eks_cluster_name
+cluster_name      = module.eks.cluster_name
    
   #region K8s ADDONS
   enable_argocd = false
