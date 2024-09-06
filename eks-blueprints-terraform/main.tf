@@ -88,7 +88,9 @@ module "eks" {
 
   # EKS Addons
   cluster_addons = {
-    coredns    = {}
+    coredns    = {
+    most_recent = true
+    }
     kube-proxy = {
     most_recent = true
     }
