@@ -28,6 +28,15 @@ module "eks_blueprints_addons" {
 
   enable_argocd = true
 
+ argocd_helm_config = {
+    set_sensitive = [
+      {
+        name  = "configs.secret.argocdServerAdminPassword"
+        value = bcrypt(data.aws_secretsmanager_secret_version.admin_password_version.secret_string)
+      }
+    ]
+  }
+
   argocd_manage_add_ons = true # Indicates that ArgoCD is responsible for managing/deploying add-ons
   argocd_applications = {
     addons = {
@@ -37,10 +46,11 @@ module "eks_blueprints_addons" {
     }
     workloads-dev = {
       path               = "argocd-apps/dev"
-      repo_url           = "https://github.com/rohansharma91/eks_blueprints_workloads.git"
+      repo_url           = "https://github.com/lkravi/eks_blueprints_workloads"
       add_on_application = false
     }
   }
+
 
   tags = local.tags
 }
