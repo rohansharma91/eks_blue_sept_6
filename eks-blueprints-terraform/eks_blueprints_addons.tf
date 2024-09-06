@@ -29,20 +29,6 @@ module "eks_blueprints_addons" {
   enable_argocd = false
    
 
-  argocd_manage_add_ons = true # Indicates that ArgoCD is responsible for managing/deploying add-ons
-  argocd_applications = {
-    addons = {
-      path               = "chart"
-      repo_url           = "https://github.com/aws-samples/eks-blueprints-add-ons.git"
-      add_on_application = true
-    }
-    workloads-dev = {
-      path               = "argocd-apps/dev"
-      repo_url           = "https://github.com/lkravi/eks_blueprints_workloads"
-      add_on_application = false
-    }
-  }
-
 
   tags = local.tags
  }
