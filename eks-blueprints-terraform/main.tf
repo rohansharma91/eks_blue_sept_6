@@ -86,15 +86,7 @@ module "eks" {
   cluster_version                = "1.30"
   cluster_endpoint_public_access = true
 
-  # EKS Addons
-  cluster_addons = {
-    coredns    = {}
-    kube-proxy = {}
-    vpc-cni    = {}
-    aws-ebs-csi-driver   = {
-      service_account_role_arn = module.ebs_csi_driver_irsa.iam_role_arn
-    }
-  }
+  
 
   vpc_id     = module.vpc.vpc_id
   subnet_ids = module.vpc.private_subnets
@@ -104,8 +96,8 @@ module "eks" {
       instance_types = ["t2.large"]
 
       min_size     = 1
-      max_size     = 3
-      desired_size = 2
+      max_size     = 2
+      desired_size = 1
     }
   }
 
