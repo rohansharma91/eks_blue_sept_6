@@ -13,17 +13,36 @@ provider "helm" {
 }
 
 
-module "eks_blueprints_addons" {
+module "eks-blueprints-addons" {
   source  = "aws-ia/eks-blueprints-addons/aws"
-  version = "~> 1.0"
+  version = "1.16.3"
 
   cluster_name      = module.eks.cluster_name
   cluster_endpoint  = module.eks.cluster_endpoint
   cluster_version   = module.eks.cluster_version
   oidc_provider_arn = module.eks.oidc_provider_arn
 
-  enable_aws_load_balancer_controller = true
-  enable_metrics_server               = true
+  eks_addons = {
+    aws-ebs-csi-driver = {
+      most_recent = true
+    }
+    coredns = {
+      most_recent = true
+    }
+    vpc-cni = {
+      most_recent = true
+    }
+    kube-proxy = {
+      most_recent = true
+    }
+  }
+
+  enable_aws_load_balancer_controller    = true
+  enable_cluster_proportional_autoscaler = true
+  enable_karpenter                       = false
+  enable_kube_prometheus_stack           = false
+  enable_metrics_server                  = true
+  enable_external_dns                    = false
   
 
   tags = local.tags
