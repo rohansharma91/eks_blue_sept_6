@@ -39,4 +39,5 @@ module "eks_blueprints_addons" {
   
 
   tags = local.tags
+  }
 }
