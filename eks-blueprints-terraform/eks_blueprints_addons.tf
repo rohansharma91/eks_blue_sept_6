@@ -30,7 +30,6 @@ module "eks_blueprints_addons" {
 
   tags = local.tags
  }
-}
 
 module "eks_blueprints_kubernetes_addons" {
   source = "github.com/aws-ia/terraform-aws-eks-blueprints//modules/kubernetes-addons?ref=v4.8.0"
@@ -63,4 +62,4 @@ module "eks_blueprints_kubernetes_addons" {
       add_on_application = false
     }
   }
-
+}
