@@ -26,6 +26,21 @@ module "eks_blueprints_addons" {
   enable_metrics_server               = true
   enable_cluster_autoscaler           = true
   enable_argocd                       = true
+
+  argocd_manage_add_ons = true # Indicates that ArgoCD is responsible for managing/deploying add-ons
+  argocd_applications = {
+    addons = {
+      path               = "chart"
+      repo_url           = "https://github.com/aws-samples/eks-blueprints-add-ons.git"
+      add_on_application = true
+    }
+    workloads-dev = {
+      path               = "argocd-apps/dev"
+      repo_url           = "hhttps://github.com/rohansharma91/eks_blueprints_workloads.git"
+      add_on_application = false
+    }
+  }
+
   enable_argo_rollouts                = true
   enable_argo_workflows               = true
 
