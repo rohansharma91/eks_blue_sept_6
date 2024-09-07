@@ -28,6 +28,19 @@ module "eks_blueprints_addons" {
   enable_argocd                       = true
   enable_argo_rollouts                = true
   enable_argo_workflows               = true
+
+  argocd_applications = {
+    addons = {
+      path               = "chart"
+      repo_url           = "https://github.com/aws-samples/eks-blueprints-add-ons.git"
+      add_on_application = true
+    }
+    workloads-dev = {
+      path               = "argocd-apps/dev"
+      repo_url           = "hhttps://github.com/rohansharma91/eks_blueprints_workloads.git"
+      add_on_application = false
+    }
+  }
    
 
 
