@@ -27,11 +27,6 @@ module "eks_blueprints_addons" {
   enable_cluster_autoscaler           = true
   enable_argocd                       = true
 
-  enable_argo_rollouts                = false
-  enable_argo_workflows               = false
-
-
-
-
+ 
   tags = local.tags
  }
