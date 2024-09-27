@@ -82,7 +82,7 @@ module "eks" {
   source  = "terraform-aws-modules/eks/aws"
   version = "~> 19.15"
 
-  cluster_name                   = rohan-eks
+  cluster_name                   = rohan_eks
   cluster_version                = "1.30"
   cluster_endpoint_public_access = true
 
