@@ -23,7 +23,7 @@ data "aws_iam_role" "eks_admin_role_name" {
   name  = local.eks_admin_role_name
 }
 
-data "aws_ecrpublic_authorization_token" "token" {}
+#data "aws_ecrpublic_authorization_token" "token" {}
 
 locals {
   name                = var.environment_name
