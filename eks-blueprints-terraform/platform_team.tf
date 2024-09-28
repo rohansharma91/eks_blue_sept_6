@@ -2,7 +2,7 @@
 #Team Management
 ###############################################################################
 
-/*provider "kubectl" {
+provider "kubectl" {
   apply_retry_count      = 10
   host                   = module.eks.cluster_endpoint
   cluster_ca_certificate = base64decode(module.eks.cluster_certificate_authority_data)
@@ -87,5 +87,5 @@ module "eks_blueprints_platform_team" {
     }
 
   }
-}*/
+}
 
