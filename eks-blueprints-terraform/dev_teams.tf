@@ -2,7 +2,7 @@
 #Dev Teams
 ###############################################################################
 
-/*module "eks_blueprints_dev_teams" {
+module "eks_blueprints_dev_teams" {
   source  = "aws-ia/eks-blueprints-teams/aws"
   version = "~> 1.0"
 
@@ -93,4 +93,4 @@
 
   tags = local.tags
 
-}*/
+}
