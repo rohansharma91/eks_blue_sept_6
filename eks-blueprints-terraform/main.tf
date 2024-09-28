@@ -119,10 +119,10 @@ module "eks" {
       # A list of groups within Kubernetes to which the role is mapped; Checkout K8s Role and Rolebindings                                                                                     
       groups = ["system:masters"]
     },
-    /*module.eks_blueprints_platform_team.aws_auth_configmap_role,
+    module.eks_blueprints_platform_team.aws_auth_configmap_role,
     [for team in module.eks_blueprints_dev_teams : team.aws_auth_configmap_role],
   
-  ])*/
+  ])
 
   tags = merge(local.tags, {
     # NOTE - if creating multiple security groups with this module, only tag the
