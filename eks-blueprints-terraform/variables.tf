@@ -24,7 +24,7 @@ variable "eks_admin_role_name" {
 
 variable "cluster_name"{
   type        = string
-  default     = "rohan-clsuter-1"
+  default     = "rohan-cluster-1"
 }
   
 
