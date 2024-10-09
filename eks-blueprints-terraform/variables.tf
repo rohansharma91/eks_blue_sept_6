@@ -21,3 +21,10 @@ variable "eks_admin_role_name" {
   description = "Additional IAM role to be admin in the cluster"
   default     = ""
 }
+
+variable "cluster_name"{
+  type        = string
+  default     = "rohan-clsuter-1"
+  
+
+
