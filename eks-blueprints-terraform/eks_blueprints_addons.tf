@@ -13,7 +13,7 @@ provider "helm" {
 }
 
 
-/*module "eks_blueprints_addons" {
+module "eks_blueprints_addons" {
   source  = "aws-ia/eks-blueprints-addons/aws"
   version = "~> 1.0"
 
@@ -29,4 +29,4 @@ provider "helm" {
   enable_karpenter                    = false
  
   tags = local.tags
- }*/
+ }
