@@ -26,7 +26,7 @@ module "eks_blueprints_addons" {
   enable_metrics_server               = false
   enable_cluster_autoscaler           = false
   enable_argocd                       = false
-  enable_karpenter                    = true
+  enable_karpenter                    = false
  
   tags = local.tags
  }
